@@ -1,5 +1,5 @@
 {
   "queryStringParameters": {
-    "query": "{greeting(firstName: \"Raz\")}"
+    "query": "{ projectConfiguration(name: \"bench\") { name\nrepos { name\nurl } }}"
   }
 }
