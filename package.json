@@ -1,6 +1,6 @@
 {
-  "name": "aws-node-graphql-api-with-dynamodb",
-  "version": "1.0.0",
+  "name": "buckley-backend",
+  "version": "0.1.0",
   "description": "A single-module GraphQL endpoint with query and mutation functionality.",
   "main": "handler.js",
   "dependencies": {
@@ -12,6 +12,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Raz Ali",
+  "license": "ISC",
+  "keywords": [
+    "buckley"
+  ]
 }
