@@ -4,7 +4,7 @@ service: buckley-backend
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   environment:
     DYNAMODB_TABLE: ${self:service}-${self:provider.stage}
   iamRoleStatements:

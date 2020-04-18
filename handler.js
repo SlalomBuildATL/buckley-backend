@@ -1,5 +1,5 @@
-const {schema} = require("./buckleyGraphQL");
 const { graphql } = require('graphql');
+const {schema} = require('./api/buckleyGraphQL');
 
 // We want to make a GET request with ?query=<graphql query>
 module.exports.query = (event, context, callback) =>
