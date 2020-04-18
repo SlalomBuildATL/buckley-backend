@@ -1,6 +1,7 @@
 const {ProjectConfiguration} = require("./types/project");
-const {GraphQLNonNull, GraphQLObjectType, GraphQLSchema, GraphQLString} =  require("graphql");
-const {getProjectConfig} = require("../db/dynamoDbQueries");
+const {GraphQLNonNull, GraphQLObjectType, GraphQLSchema, GraphQLString, GraphQLList} =  require("graphql");
+const {getProjectConfig, getGitAliasesConfig} = require("../db/dynamoDbQueries");
+const { GitAliasConfigurationType } = require("./types/gitAliasConfig");
 
 const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
@@ -11,6 +12,10 @@ const schema = new GraphQLSchema({
                 type: ProjectConfiguration,
                 resolve: (parent, {name}) => getProjectConfig(name),
             },
+            gitAliasesConfiguration: {
+                type: new GraphQLList( GitAliasConfigurationType ),
+                resolve: () => getGitAliasesConfig()
+            }
         },
     })
 })

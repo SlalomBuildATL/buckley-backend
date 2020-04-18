@@ -11,7 +11,7 @@ const promisify = foo => new Promise((resolve, reject) => {
     });
 });
 
-const getGitAliasesConfig = name => promisify(callback =>
+const getGitAliasesConfig = () => promisify(callback =>
     dynamoDb.get({
         TableName: process.env.DYNAMODB_TABLE,
         Key: {
@@ -19,7 +19,7 @@ const getGitAliasesConfig = name => promisify(callback =>
             "name": "aliases"
         },
     }, callback))
-    .then(result => result.Item);
+    .then(result => result.Item ? result.Item.aliases : []);
 
 const getProjectConfig = name => promisify(callback =>
     dynamoDb.get({
