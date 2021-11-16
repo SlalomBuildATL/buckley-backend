@@ -4,7 +4,7 @@
   "description": "A single-module GraphQL endpoint with query and mutation functionality.",
   "main": "handler.js",
   "dependencies": {
-    "aws-sdk": "^2.136.0",
+    "aws-sdk": "^2.814.0",
     "eslint-plugin-react": "^7.4.0",
     "graphql": "^0.11.7"
   },
